@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petrona:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
   --bg: #F5F6F4;
@@ -30,7 +30,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Petrona', serif;
   font-weight: 500;
   color: var(--navy);
   line-height: 1.15;
@@ -70,7 +70,7 @@ header.site {
 }
 
 .brand {
-  font-family: 'Fraunces', serif;
+  font-family: 'Petrona', serif;
   font-weight: 600;
   font-size: 1.15rem;
   color: var(--navy);
@@ -238,7 +238,7 @@ section.alt { background: var(--paper); border-top: 1px solid var(--line); borde
 }
 .trait-list p { margin: 0; font-size: 1.05rem; }
 .trait-list strong {
-  font-family: 'Fraunces', serif;
+  font-family: 'Petrona', serif;
   color: var(--navy);
   font-weight: 600;
 }
@@ -304,7 +304,7 @@ section.alt { background: var(--paper); border-top: 1px solid var(--line); borde
   font-size: 0.95rem;
 }
 .tier-list li:first-child { border-top: none; padding-top: 0; }
-.tier-list li strong { color: var(--navy); font-family: 'Fraunces', serif; font-weight: 600; }
+.tier-list li strong { color: var(--navy); font-family: 'Petrona', serif; font-weight: 600; }
 
 /* Process route (connected path, not a repeating card grid) */
 .route {
@@ -349,7 +349,7 @@ section.alt { background: var(--paper); border-top: 1px solid var(--line); borde
   border-radius: 50%;
   background: var(--navy);
   color: var(--gold);
-  font-family: 'Fraunces', serif;
+  font-family: 'Petrona', serif;
   font-weight: 600;
   font-size: 1.1rem;
   display: flex;
@@ -432,7 +432,7 @@ footer.site {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  font-family: 'Fraunces', serif;
+  font-family: 'Petrona', serif;
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--navy);
