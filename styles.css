@@ -418,6 +418,19 @@ footer.site {
 .closing-note { max-width: 56ch; }
 .closing-note p { margin: 16px 0 26px; }
 
+.growth-chart { max-width: 680px; margin-top: 8px; }
+.growth-chart h3 { font-size: 1.1rem; margin-bottom: 20px; }
+.growth-chart svg { width: 100%; height: auto; display: block; }
+.chart-tick { font-family: 'Work Sans', sans-serif; font-size: 12px; fill: var(--ink-soft); }
+.chart-caption { font-size: 0.85rem; color: var(--ink-soft); font-style: italic; margin: 14px 0 0; max-width: none; }
+
+.nested-packages { max-width: 620px; margin: 0 auto; text-align: center; }
+.nested-packages svg { width: 100%; height: auto; display: block; }
+.nested-label { font-family: 'Petrona', serif; font-weight: 700; font-size: 17px; fill: #16294B; }
+.nested-label--core { font-size: 17px; fill: var(--gold-text); }
+.nested-caption { font-family: 'Work Sans', sans-serif; font-size: 12px; fill: var(--ink-soft); text-anchor: middle; }
+.nested-footnote { font-size: 0.9rem; color: var(--ink-soft); margin: 18px 0 0; max-width: none; }
+
 /* FAQ accordion */
 .faq-list { display: flex; flex-direction: column; }
 .faq-item {
