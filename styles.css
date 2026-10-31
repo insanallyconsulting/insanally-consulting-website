@@ -620,18 +620,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .offer > p { margin-bottom: 18px; }
 .offer ul { list-style: none; margin: 0 0 24px 0; padding: 0; }
 .offer ul li {
-  padding: 9px 0 9px 22px;
+  padding: 5px 0 5px 22px;
   position: relative;
   color: var(--ink-soft);
-  border-top: 1px solid var(--line);
   font-size: 0.95rem;
 }
-.offer ul li:first-child { border-top: none; padding-top: 0; }
+.offer ul li:first-child { padding-top: 0; }
 .offer ul li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 18px;
+  top: 14px;
   width: 6px;
   height: 6px;
   background: var(--gold);
@@ -666,3 +665,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .pair { grid-template-columns: 1fr; gap: 48px; }
   .pair-col + .pair-col { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 48px; }
 }
+
+.offer, .offer:hover { text-decoration: none; }
+
+/* Full-width section heading: title left, intro right */
+.section-head--split {
+  max-width: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
+.section-head--split h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.9rem); }
+.section-head--split p { margin: 0; max-width: 46ch; justify-self: end; }
+@media (max-width: 860px) {
+  .section-head--split { grid-template-columns: 1fr; gap: 12px; }
+  .section-head--split p { justify-self: start; }
+}
+
+.offer { position: relative; }
+.offer-icon { position: absolute; top: 28px; right: 32px; opacity: 0.95; }
+.offer-icon svg { display: block; }
+@media (max-width: 860px) { .offer-icon { top: 22px; right: 22px; } .offer-icon svg { width: 48px; height: 48px; } }
