@@ -648,7 +648,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .branding-note { font-size: 0.9rem; color: var(--ink-soft); margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--line); max-width: none; }
 #seo, #branding { scroll-margin-top: 80px; }
 
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .offer-grid { grid-template-columns: 1fr; }
   .offer { padding: 24px; }
 }
@@ -661,7 +661,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
 .pair-col + .pair-col { border-left: 1px solid var(--line); padding-left: 64px; }
 .pair .section-head { margin-bottom: 36px; }
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .pair { grid-template-columns: 1fr; gap: 48px; }
   .pair-col + .pair-col { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 48px; }
 }
@@ -681,7 +681,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .section-head--split h2 { margin-bottom: 0; font-size: clamp(2rem, 4vw, 2.9rem); }
 .section-head--split p { margin: 0; max-width: 46ch; justify-self: end; }
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .section-head--split { grid-template-columns: 1fr; gap: 12px; }
   .section-head--split p { justify-self: start; }
 }
@@ -690,3 +690,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .offer-icon { position: absolute; top: 28px; right: 32px; opacity: 0.95; }
 .offer-icon svg { display: block; }
 @media (max-width: 860px) { .offer-icon { top: 22px; right: 22px; } .offer-icon svg { width: 48px; height: 48px; } }
+
+/* Narrower computer windows and tablets: keep side by side, tighten spacing */
+@media (max-width: 1000px) and (min-width: 641px) {
+  .pair { gap: 36px; }
+  .pair-col + .pair-col { padding-left: 36px; }
+  .offer-grid { gap: 20px; }
+  .offer { padding: 26px; }
+  .offer-icon svg { width: 48px; height: 48px; }
+}
+@media (max-width: 640px) { .offer { padding: 24px; } }
+@media (max-width: 860px) { .route-top, .route-bottom { align-self: stretch; } }
