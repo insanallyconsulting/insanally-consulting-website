@@ -596,3 +596,73 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .contact-layout { grid-template-columns: 1fr; }
   .footer-grid { flex-direction: column; }
 }
+
+/* What I do (homepage) */
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.offer {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 32px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.offer:hover { border-color: var(--navy); border-top-color: var(--gold); box-shadow: 0 10px 28px rgba(13, 27, 51, 0.10); }
+.offer h3 { font-size: 1.6rem; margin-bottom: 8px; }
+.offer > p { margin-bottom: 18px; }
+.offer ul { list-style: none; margin: 0 0 24px 0; padding: 0; }
+.offer ul li {
+  padding: 9px 0 9px 22px;
+  position: relative;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.offer ul li:first-child { border-top: none; padding-top: 0; }
+.offer ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.offer ul li:first-child::before { top: 9px; }
+.offer-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+.offer-link::after { content: " \2192"; color: var(--gold-text); }
+.section-head .service-kind { margin-bottom: 6px; }
+.branding-note { font-size: 0.9rem; color: var(--ink-soft); margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--line); max-width: none; }
+#seo, #branding { scroll-margin-top: 80px; }
+
+@media (max-width: 860px) {
+  .offer-grid { grid-template-columns: 1fr; }
+  .offer { padding: 24px; }
+}
+
+/* Button on the navy strip */
+.local-strip .btn-primary { background: var(--gold); color: var(--navy-deep); }
+.local-strip .btn-primary:hover { background: #CDA25A; }
+
+/* Search + branding side by side (homepage) */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.pair-col + .pair-col { border-left: 1px solid var(--line); padding-left: 64px; }
+.pair .section-head { margin-bottom: 36px; }
+@media (max-width: 860px) {
+  .pair { grid-template-columns: 1fr; gap: 48px; }
+  .pair-col + .pair-col { border-left: none; padding-left: 0; border-top: 1px solid var(--line); padding-top: 48px; }
+}
