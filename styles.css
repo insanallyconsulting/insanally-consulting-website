@@ -699,3 +699,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .ph-btns span{white-space:nowrap;font-size:11px;border:1px solid #dadce0;border-radius:16px;padding:5px 10px;color:#1a73e8;font-weight:600}
 .ph-btns span.pri{background:#16294B;color:#fff;border-color:#16294B}
 @media (max-width:860px){.phone{width:260px;transform:none}}
+
+/* Short plain-language definition under each "What I do" card tagline */
+.offer > p.offer-def { font-size: 0.9rem; line-height: 1.55; color: var(--ink-soft); margin: -8px 0 20px; padding-left: 12px; border-left: 2px solid var(--line); }
