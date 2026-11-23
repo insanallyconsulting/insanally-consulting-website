@@ -702,3 +702,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Short plain-language definition under each "What I do" card tagline */
 .offer > p.offer-def { font-size: 0.9rem; line-height: 1.55; color: var(--ink-soft); margin: -8px 0 20px; padding-left: 12px; border-left: 2px solid var(--line); }
+
+/* Services dropdown (Nov 22, 2026) */
+.nav-links .has-sub { position: relative; padding: 12px 0; margin: -12px 0; }
+.nav-links .has-sub > a::after { content: ""; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: 0 0 3px 8px; }
+.sub-menu { list-style: none; margin: 0; padding: 8px 0; position: absolute; top: 100%; left: -18px; min-width: 210px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 4px; box-shadow: 0 10px 28px rgba(13, 27, 51, 0.10); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s ease, transform .15s ease, visibility .15s; z-index: 60; }
+.has-sub:hover .sub-menu, .has-sub:focus-within .sub-menu { opacity: 1; visibility: visible; transform: none; }
+.nav-links .sub-menu a { display: block; padding: 9px 18px; border-bottom: none; font-size: 0.92rem; white-space: nowrap; }
+.nav-links .sub-menu a:hover { background: var(--bg); color: var(--navy); }
+.nav-links .sub-menu a[aria-current="page"] { color: var(--gold-text); }
+.footer-services { color: var(--ink-soft); font-size: 0.85rem; margin: 10px 0 0; }
+.footer-services a { color: var(--ink-soft); text-decoration: none; }
+.footer-services a:hover { color: var(--navy); text-decoration: underline; }
+.faq-group { font-size: 1.35rem; margin: 48px 0 8px; }
+.faq-group:first-child { margin-top: 0; }
+@media (max-width: 860px) {
+  .nav-links .has-sub { padding: 0; margin: 0; }
+  .nav-links .has-sub > a::after { display: none; }
+  .sub-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-radius: 0; background: none; min-width: 0; padding: 0 0 10px 16px; }
+  .nav-links .sub-menu li { border-top: none; }
+  .nav-links .sub-menu a { padding: 7px 0; font-size: 0.92rem; color: var(--ink-soft); }
+  .sub-menu .sub-all { display: none; }
+}
