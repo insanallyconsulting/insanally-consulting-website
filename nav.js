@@ -17,3 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Services dropdown: opens and closes on click
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.sub-toggle');
+  if (!toggle) return;
+  var item = toggle.parentElement;
+  function setOpen(open) {
+    item.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(!item.classList.contains('is-open'));
+  });
+  document.addEventListener('click', function (e) {
+    if (!item.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { setOpen(false); toggle.focus(); }
+  });
+});
