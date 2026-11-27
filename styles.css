@@ -703,27 +703,128 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Short plain-language definition under each "What I do" card tagline */
 .offer > p.offer-def { font-size: 0.9rem; line-height: 1.55; color: var(--ink-soft); margin: -8px 0 20px; padding-left: 12px; border-left: 2px solid var(--line); }
 
-/* Services dropdown, opens on click (Nov 22, 2026) */
-.nav-links .has-sub { position: relative; }
-.sub-toggle { background: none; border: none; padding: 0 0 3px; margin: 0; cursor: pointer; font: inherit; font-size: 0.95rem; font-weight: 500; color: var(--ink); border-bottom: 2px solid transparent; transition: border-color 0.15s ease; display: inline-flex; align-items: center; }
-.sub-toggle:hover, .sub-toggle.is-current, .sub-toggle[aria-expanded="true"] { border-bottom-color: var(--gold); }
-.sub-toggle::after { content: ""; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: 0 0 3px 8px; transition: transform .15s ease; }
-.sub-toggle[aria-expanded="true"]::after { transform: rotate(-135deg); margin-bottom: -3px; }
-.sub-menu { list-style: none; margin: 0; padding: 8px 0; position: absolute; top: calc(100% + 14px); left: -18px; min-width: 210px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--gold); border-radius: 4px; box-shadow: 0 10px 28px rgba(13, 27, 51, 0.10); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s ease, transform .15s ease, visibility .15s; z-index: 60; }
-.has-sub.is-open .sub-menu { opacity: 1; visibility: visible; transform: none; }
-.nav-links .sub-menu a { display: block; padding: 9px 18px; border-bottom: none; font-size: 0.92rem; white-space: nowrap; }
-.nav-links .sub-menu a:hover { background: var(--bg); color: var(--navy); }
-.nav-links .sub-menu a[aria-current="page"] { color: var(--gold-text); }
-.footer-services { color: var(--ink-soft); font-size: 0.85rem; margin: 10px 0 0; }
-.footer-services a { color: var(--ink-soft); text-decoration: none; }
-.footer-services a:hover { color: var(--navy); text-decoration: underline; }
-.faq-group { font-size: 1.35rem; margin: 48px 0 8px; }
-.faq-group:first-child { margin-top: 0; }
-@media (max-width: 860px) {
-  .sub-toggle { display: flex; width: 100%; justify-content: space-between; padding: 14px 0; border-bottom: none; }
-  .sub-toggle:hover, .sub-toggle.is-current, .sub-toggle[aria-expanded="true"] { border-bottom-color: transparent; }
-  .sub-menu { position: static; display: none; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-radius: 0; background: none; min-width: 0; padding: 0 0 10px 16px; }
-  .has-sub.is-open .sub-menu { display: block; }
-  .nav-links .sub-menu li { border-top: none; }
-  .nav-links .sub-menu a { padding: 7px 0; font-size: 0.92rem; color: var(--ink-soft); }
+/* Services dropdown in the nav (markup built by nav.js) */
+.has-dropdown { position: relative; }
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 4px 0 4px 6px;
+  margin: 0;
+  cursor: pointer;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
 }
+.dropdown-toggle svg { display: block; transition: transform 0.15s ease; }
+.has-dropdown.is-open .dropdown-toggle svg { transform: rotate(180deg); }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: -20px;
+  z-index: 60;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  min-width: 300px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  box-shadow: 0 12px 28px rgba(13, 27, 51, 0.12);
+}
+.dropdown::before { content: ""; position: absolute; top: -18px; left: 0; right: 0; height: 15px; }
+.has-dropdown:hover .dropdown,
+.has-dropdown.is-open .dropdown { display: block; }
+.dropdown li + li { border-top: 1px solid var(--line); }
+.nav-links .dropdown a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--navy);
+  border-bottom: none;
+  white-space: nowrap;
+}
+.nav-links .dropdown a:hover { background: var(--bg); }
+.dropdown-note { color: var(--ink-soft); font-weight: 400; }
+
+@media (max-width: 860px) {
+  .dropdown-toggle { display: none; }
+  .dropdown,
+  .has-dropdown:hover .dropdown {
+    display: block;
+    position: static;
+    min-width: 0;
+    padding: 0 0 10px 16px;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .dropdown::before { display: none; }
+  .nav-links .dropdown li,
+  .dropdown li + li { border-top: none; }
+  .nav-links .dropdown a {
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    white-space: normal;
+  }
+}
+
+/* Website Services section (services page) */
+.section-divided { border-top: 1px solid var(--line); }
+#website { scroll-margin-top: 80px; }
+.cycle {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 32px;
+  margin-bottom: 56px;
+}
+.cycle-title {
+  font-family: 'Petrona', serif;
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+.cycle-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cycle-steps li { padding: 0 16px 0 20px; border-left: 2px dashed var(--line); }
+.cycle-steps li:first-child { border-left: none; padding-left: 0; }
+.cycle-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--navy);
+  color: var(--navy);
+  font-family: 'Petrona', serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.cycle-marker--solid { background: var(--navy); color: var(--gold); }
+.cycle-steps h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+.cycle-steps p { font-size: 0.92rem; margin: 0; }
+.cycle-note { font-size: 0.88rem; margin: 24px 0 0; max-width: none; }
+.service-detail .service-aside { font-size: 0.9rem; margin: -8px 0 24px; }
+@media (max-width: 640px) {
+  .cycle { padding: 24px; }
+  .cycle-steps { grid-template-columns: 1fr; gap: 24px; }
+  .cycle-steps li { border-left: none; padding-left: 0; }
+}
+
+/* Homepage: three service cards */
+.offer-grid--three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1000px) { .offer-grid--three { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .offer-grid--three { grid-template-columns: 1fr; } }
+.offer-grid--three .offer h3 { font-size: 1.45rem; padding-right: 52px; }
+.offer-grid--three .offer-icon svg { width: 52px; height: 52px; }
+.service-detail ul li:first-child::before { top: 9px; }
